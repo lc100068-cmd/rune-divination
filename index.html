@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#eddcf6">
+<meta name="description" content="縄文の壺から舞い上がる古代ルーン文字が、あなたの問いにやさしく答えます。一枚引き・三枚引きのルーン占い。">
+<title>銀河のルーン占い｜Galactic Rune Reading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== 背景 ===== -->
+<div class="sky"></div>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div class="hearts" id="hearts" aria-hidden="true"></div>
+
+<main class="app">
+
+  <div class="title-wrap">
+    <h1 class="title">銀河のルーン占い</h1>
+    <p class="subtitle">Galactic Rune Reading</p>
+  </div>
+
+  <!-- ===== 壺のステージ ===== -->
+  <div class="stage">
+    <div class="rune-layer" id="runeLayer" aria-hidden="true"></div>
+    <div class="pot-wrap" id="potWrap">
+      <div class="pot-glow"></div>
+      <svg viewBox="0 0 240 270" width="100%" role="img" aria-label="ルーン文字が舞い上がる縄文の壺">
+        <defs>
+          <linearGradient id="bodyG" x1="10%" y1="0%" x2="95%" y2="100%">
+            <stop offset="0%"  stop-color="#cbb6ad"/>
+            <stop offset="28%" stop-color="#b89b90"/>
+            <stop offset="62%" stop-color="#9c7d74"/>
+            <stop offset="100%" stop-color="#6f564f"/>
+          </linearGradient>
+          <radialGradient id="sheen" cx="32%" cy="26%" r="55%">
+            <stop offset="0%" stop-color="#ffe9e4" stop-opacity=".85"/>
+            <stop offset="100%" stop-color="#ffe9e4" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="rimG" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#8d7169"/>
+            <stop offset="50%" stop-color="#bda69c"/>
+            <stop offset="100%" stop-color="#7a5f58"/>
+          </linearGradient>
+          <radialGradient id="mouthG" cx="50%" cy="45%" r="60%">
+            <stop offset="0%" stop-color="#3d2c2a"/>
+            <stop offset="70%" stop-color="#5a433e"/>
+            <stop offset="100%" stop-color="#7b625a"/>
+          </radialGradient>
+          <linearGradient id="stoneG" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%"  stop-color="#e2e4df"/>
+            <stop offset="40%" stop-color="#c2c6bf"/>
+            <stop offset="100%" stop-color="#939a92"/>
+          </linearGradient>
+          <filter id="soft"><feGaussianBlur stdDeviation="2.4"/></filter>
+        </defs>
+
+        <!-- 苔むした石の台座 -->
+        <ellipse cx="120" cy="250" rx="94" ry="15" fill="rgba(120,100,150,.20)" filter="url(#soft)"/>
+        <path d="M24,242 Q18,229 40,223 Q72,217 120,216 Q170,217 200,223 Q222,229 216,242
+                 Q196,255 120,256 Q44,255 24,242 Z"
+              fill="url(#stoneG)" stroke="#8d938a" stroke-width="1"/>
+        <path d="M40,224 Q76,218 120,217 Q164,218 200,224 Q202,229 192,231
+                 Q152,225 120,225 Q86,225 48,231 Q38,229 40,224 Z"
+              fill="#f1f3ee" opacity=".8"/>
+        <g fill="#8fb87f" opacity=".55">
+          <path d="M30,238 q12,-9 26,-4 q11,4 2,9 q-16,4 -28,-5 Z"/>
+          <path d="M182,234 q16,-7 29,1 q7,4 -4,8 q-18,2 -25,-9 Z"/>
+          <ellipse cx="78" cy="247" rx="13" ry="4"/>
+          <ellipse cx="156" cy="248" rx="11" ry="3.5"/>
+        </g>
+        <g fill="#b4b8b1" opacity=".45">
+          <ellipse cx="60" cy="246" rx="8" ry="2.6"/><ellipse cx="128" cy="251" rx="10" ry="2.4"/>
+        </g>
+
+        <!-- 壺本体 -->
+        <path id="potBody" d="M84,62 C58,80 34,110 36,146 C38,186 66,216 96,226
+                 L144,226 C174,216 202,186 204,146 C206,110 182,80 156,62 Z"
+              fill="url(#bodyG)" stroke="#5f4942" stroke-width="1.6"/>
+        <path d="M84,62 C58,80 34,110 36,146 C38,186 66,216 96,226
+                 L144,226 C174,216 202,186 204,146 C206,110 182,80 156,62 Z"
+              fill="url(#sheen)"/>
+        <ellipse cx="120" cy="227" rx="25" ry="5.5" fill="#7a625a" opacity=".9"/>
+        <ellipse cx="120" cy="231" rx="34" ry="6" fill="rgba(90,70,110,.28)" filter="url(#soft)"/>
+
+        <!-- 両側の耳（縄文の把手） -->
+        <g fill="#95776c" stroke="#5f4942" stroke-width="1.4">
+          <path d="M37,134 C22,130 16,143 23,153 C28,160 38,159 39,153 Z"/>
+          <path d="M203,134 C218,130 224,143 217,153 C212,160 202,159 201,153 Z"/>
+        </g>
+        <circle cx="29" cy="145" r="2.6" fill="#4a3630"/>
+        <circle cx="211" cy="145" r="2.6" fill="#4a3630"/>
+
+        <!-- 縄文の渦巻き文様 -->
+        <g fill="none" stroke="#f2dcae" stroke-width="2" opacity=".9" stroke-linecap="round">
+          <path d="M74,140 m0,-15 a15,15 0 1,1 -0.1,0 M74,140 m0,-9.5 a9.5,9.5 0 1,0 0.1,0 M74,140 m0,-4 a4,4 0 1,1 -0.1,0"/>
+          <path d="M120,132 m0,-20 a20,20 0 1,1 -0.1,0 M120,132 m0,-13 a13,13 0 1,0 0.1,0 M120,132 m0,-6 a6,6 0 1,1 -0.1,0"/>
+          <path d="M166,140 m0,-15 a15,15 0 1,1 -0.1,0 M166,140 m0,-9.5 a9.5,9.5 0 1,0 0.1,0 M166,140 m0,-4 a4,4 0 1,1 -0.1,0"/>
+        </g>
+        <!-- 縄目のテクスチャ -->
+        <g stroke="#e8d3ab" stroke-width="1.1" opacity=".4" fill="none">
+          <path d="M52,172 Q120,186 188,172"/><path d="M56,184 Q120,198 184,184"/>
+          <path d="M64,196 Q120,209 176,196"/><path d="M78,208 Q120,219 162,208"/>
+          <path d="M62,90 Q120,102 178,90"/><path d="M50,104 Q120,118 190,104"/>
+          <path d="M42,120 Q120,135 198,120"/>
+        </g>
+
+        <!-- 口縁 -->
+        <ellipse cx="120" cy="62" rx="40" ry="11.5" fill="url(#rimG)" stroke="#5f4942" stroke-width="1.6"/>
+        <ellipse cx="120" cy="61" rx="31" ry="7.5" fill="url(#mouthG)"/>
+        <ellipse cx="120" cy="58" rx="27" ry="6" fill="#ffdf9e" opacity=".6" filter="url(#soft)"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ===== ① イントロ／スプレッド選択 ===== -->
+  <section class="panel" id="stepIntro">
+    <p class="lead">
+      古代ゲルマンの人々が神々の声を聴くために使った、世界最古の文字のひとつ「<b>ルーン</b>」。
+      壺の中で眠る24の文字が、いまのあなたに必要な気づきを運んでくれます✨
+    </p>
+
+    <details class="about">
+      <summary>ルーン占いについて</summary>
+      <p>ルーンは北欧・ゲルマン世界で使われた文字で、一文字ずつに「豊かさ」「旅立ち」「夜明け」といった意味が宿っています。
+         袋や壺から引いた文字を読み解くことで、状況の流れや心の奥にある答えを映し出す占術です。</p>
+      <ul>
+        <li>ᚠ 当たり外れではなく「いまのヒント」として受け取ってね</li>
+        <li>ᛉ 逆さに出た文字（逆位置）は、立ち止まりのサイン</li>
+        <li>ᛊ 同じ問いは、その日のうちは一度だけがおすすめ</li>
+      </ul>
+    </details>
+
+    <hr style="border:none;border-top:1px dashed rgba(150,130,180,.35);margin:16px 0">
+
+    <p class="section-label">引き方をえらぶ</p>
+    <p class="section-note">いまの気分にしっくりくるほうを選んでください。</p>
+    <div class="spread-grid">
+      <button class="spread-card" data-mode="1">
+        <div class="glyphs">ᚠ</div>
+        <div class="nm">一枚引き</div>
+        <div class="ds">ひとことで<br>今日の指針をもらう</div>
+      </button>
+      <button class="spread-card" data-mode="3">
+        <div class="glyphs">ᚨᛉᛞ</div>
+        <div class="nm">三枚引き</div>
+        <div class="ds">過去・現在・未来<br>流れを読み解く</div>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== ② 問いを胸で唱える ===== -->
+  <section class="panel hidden" id="stepFocus">
+    <div class="chip" id="modeChip">ᚱ 一枚引き</div>
+    <p class="section-label">占いたいことを、胸で唱えて</p>
+    <p class="section-note">書いても、書かなくても大丈夫。<br>大切なのは、そっと心の中で3回となえることです。</p>
+
+    <div class="chant" aria-hidden="true">
+      <span class="ring"></span><span class="ring"></span><span class="ring"></span>
+      <div class="core">こころの中で<br>3回となえて</div>
+    </div>
+
+    <label for="q" class="section-note" style="display:block;text-align:left;margin-bottom:6px">
+      🌟 言葉にしたい方はこちらへ（任意）
+    </label>
+    <textarea id="q" maxlength="120" placeholder="例：いまの仕事で意識するとよいことは？&#10;例：あの人との関係はこれからどうなる？"></textarea>
+
+    <button class="btn" id="castBtn" style="margin-top:14px">壺にルーンを呼びかける ✨</button>
+    <button class="back-link" id="backBtn">引き方を選びなおす</button>
+  </section>
+
+  <!-- ===== ③ 占い中 ===== -->
+  <section class="panel hidden" id="stepCasting">
+    <p class="casting" id="castingText">ルーンが宙を舞っています…</p>
+  </section>
+
+  <!-- ===== ④ 結果 ===== -->
+  <section class="panel hidden" id="stepResult">
+    <div class="chip" id="resultChip">ᚱ 一枚引き</div>
+    <div class="q-echo hidden" id="qEcho"></div>
+    <div id="cards"></div>
+    <div class="summary" id="summary"></div>
+    <div class="btn-row">
+      <button class="btn ghost" id="copyBtn">結果をコピー</button>
+      <button class="btn ghost" id="againBtn">もう一度引く</button>
+    </div>
+  </section>
+
+  <p class="footer">GALACTIC RUNE READING &nbsp;·&nbsp; ᚠᚢᚦᚨᚱᚲ</p>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="runes.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
