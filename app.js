@@ -208,7 +208,7 @@
 
   el("copyBtn").addEventListener("click", function () {
     var positions = SPREADS[state.mode].positions;
-    var lines = ["【銀河のルーン占い｜" + SPREADS[state.mode].label + "】"];
+    var lines = ["【らぴたのルーン占い｜" + SPREADS[state.mode].label + "】"];
     if (state.question) lines.push("問い：" + state.question);
     state.result.forEach(function (item, i) {
       var r = item.rune;
