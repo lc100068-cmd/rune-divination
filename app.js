@@ -1,5 +1,5 @@
 /* =========================================================
-   銀河のルーン占い  -  アプリ本体
+   らぴたのルーン占い  -  アプリ本体
    ========================================================= */
 (function () {
   "use strict";
@@ -43,7 +43,7 @@
     wrap.style.setProperty("--rise", -(150 + Math.random() * 170) + "px");
     wrap.style.setProperty("--dur", dur + "s");
     wrap.style.setProperty("--delay", (opts.delay || 0) + "s");
-    wrap.style.setProperty("--top", (30 + Math.random() * 5) + "%");
+    wrap.style.setProperty("--top", (23 + Math.random() * 5) + "%");
 
     var glyph = document.createElement("i");
     glyph.textContent = GLYPHS[(Math.random() * GLYPHS.length) | 0];
