@@ -40,10 +40,10 @@
     var dur = (big ? 2.4 : 3.4) + Math.random() * 2.2;
 
     wrap.style.setProperty("--x", (Math.random() * (big ? 90 : 64) - (big ? 45 : 32)) + "px");
-    wrap.style.setProperty("--rise", -(150 + Math.random() * 170) + "px");
+    wrap.style.setProperty("--rise", -(100 + Math.random() * 110) + "px");
     wrap.style.setProperty("--dur", dur + "s");
     wrap.style.setProperty("--delay", (opts.delay || 0) + "s");
-    wrap.style.setProperty("--top", (23 + Math.random() * 5) + "%");
+    wrap.style.setProperty("--top", (17 + Math.random() * 5) + "%");
 
     var glyph = document.createElement("i");
     glyph.textContent = GLYPHS[(Math.random() * GLYPHS.length) | 0];
