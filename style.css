@@ -85,6 +85,15 @@ body{
       rgba(255,255,255,.26) 0%, rgba(255,252,246,.1) 54%, rgba(255,255,255,0) 88%);
   filter:blur(16px)}
 
+/* 見出しのまわりの星 */
+.sparks{position:absolute;inset:0;pointer-events:none;z-index:-1}
+.sparks span{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);
+  transform:translate(-50%,-50%);
+  background:radial-gradient(closest-side,#fffdf4 0%,#ffeec2 40%,rgba(255,226,160,0) 78%);
+  clip-path:polygon(50% 0%,57% 43%,100% 50%,57% 57%,50% 100%,43% 57%,0% 50%,43% 43%);
+  filter:drop-shadow(0 0 5px rgba(255,236,186,.95));
+  animation:twinkle 3.6s ease-in-out var(--d) infinite alternate}
+
 /* 金の飾り罫 */
 .orn{width:210px;margin:2px auto 6px;line-height:0;
   filter:drop-shadow(0 1px 3px rgba(120,78,42,.35)) drop-shadow(0 0 10px rgba(255,226,170,.7))}
@@ -94,8 +103,8 @@ body{
   display:flex;flex-direction:column;align-items:center;gap:2px;
   /* 文字を金色でくり抜く。色は透明にして背景を文字型に切り抜いている */
   background:linear-gradient(177deg,
-    #82551b 0%, #a3702a 13%, #c08d3c 28%, #d9ab5c 44%,
-    #eccd8e 57%, #d2a251 72%, #b07f2c 87%, #8d5e1d 100%);
+    #bb9350 0%, #9e6e3d 14%, #956739 30%, #aa7c41 45%,
+    #bf8d4d 60%, #d2a24c 75%, #e5bd63 90%, #f2ce76 100%);
   -webkit-background-clip:text; background-clip:text;
   -webkit-text-fill-color:transparent; color:transparent;
   /* color が透明なので text-shadow は使えない。drop-shadow で発光させる */
@@ -107,9 +116,9 @@ body{
 .title .t1{font-size:1.72rem}
 .title .t2{font-size:2.44rem;letter-spacing:.09em}
 
-.subtitle{font-family:var(--serif);font-size:.76rem;letter-spacing:.2em;color:#4b3f78;
-  font-weight:600;margin-top:10px;
-  text-shadow:0 1px 8px rgba(255,255,255,.85),0 0 18px rgba(255,255,255,.7)}
+.subtitle{font-family:var(--serif);font-size:.95rem;letter-spacing:.11em;color:#3d3368;
+  font-weight:700;margin-top:9px;text-transform:uppercase;
+  text-shadow:0 1px 8px rgba(255,255,255,.9),0 0 18px rgba(255,255,255,.75)}
 .tagline{font-family:var(--serif);font-size:.72rem;letter-spacing:.08em;color:#5a4d88;
   margin-top:5px;text-shadow:0 1px 8px rgba(255,255,255,.85),0 0 16px rgba(255,255,255,.65)}
 
