@@ -26,7 +26,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="pot.webp">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -40,8 +40,32 @@
 <main class="app">
 
   <div class="title-wrap">
-    <h1 class="title">らぴたのルーン占い</h1>
-    <p class="subtitle">Rapita&#39;s Rune Reading</p>
+    <div class="orn" aria-hidden="true">
+      <svg viewBox="0 0 260 26" width="100%" height="26">
+        <defs>
+          <linearGradient id="ornG" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="26">
+            <stop offset="0%"   stop-color="#f5dca4"/>
+            <stop offset="45%"  stop-color="#d9ad5c"/>
+            <stop offset="100%" stop-color="#b3842f"/>
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#ornG)" stroke-width="1.1" stroke-linecap="round">
+          <path d="M14,13 H104"/><path d="M28,9 H100"/>
+          <path d="M246,13 H156"/><path d="M232,9 H160"/>
+        </g>
+        <g fill="url(#ornG)">
+          <path d="M130,0 L134.2,10.4 L144,13 L134.2,15.6 L130,26 L125.8,15.6 L116,13 L125.8,10.4 Z"/>
+          <path d="M110,13 L113,11.2 L113,14.8 Z"/><path d="M150,13 L147,11.2 L147,14.8 Z"/>
+          <circle cx="10" cy="13" r="1.6"/><circle cx="250" cy="13" r="1.6"/>
+        </g>
+      </svg>
+    </div>
+    <h1 class="title">
+      <span class="t1">らぴたの</span>
+      <span class="t2">ルーン占い</span>
+    </h1>
+    <p class="subtitle">Rapita Rune Reading</p>
+    <p class="tagline">〜 宇宙からのやさしいメッセージ 〜</p>
   </div>
 
   <!-- ===== 壺のステージ ===== -->

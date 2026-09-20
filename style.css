@@ -71,20 +71,35 @@ body{
 /* ---------- レイアウト ---------- */
 .app{position:relative;z-index:1;width:100%;max-width:430px;padding:18px 16px 40px}
 
-.title-wrap{text-align:center;margin-bottom:6px}
-.title{font-family:var(--serif);font-size:1.62rem;letter-spacing:.14em;color:var(--cream);
-  font-weight:600;
-  text-shadow:
-    0 1px 0 rgba(120,78,42,.55),
-    0 2px 9px rgba(108,66,34,.5),
-    0 0 22px rgba(255,232,178,.75),
-    0 0 44px rgba(255,214,150,.45)}
-.subtitle{font-family:var(--serif);font-size:.66rem;letter-spacing:.22em;color:#fdeec4;
-  font-variant:small-caps;font-feature-settings:"smcp";margin-top:9px;
-  text-shadow:0 1px 4px rgba(108,66,34,.6),0 0 14px rgba(255,226,170,.55);
-  display:flex;align-items:center;justify-content:center;gap:10px}
-.subtitle::before,.subtitle::after{content:"";width:28px;height:1px;
-  background:linear-gradient(90deg,rgba(253,238,196,0),rgba(253,238,196,.95),rgba(253,238,196,0))}
+.title-wrap{text-align:center;margin-bottom:10px;position:relative}
+
+/* 金の飾り罫 */
+.orn{width:210px;margin:2px auto 6px;line-height:0;
+  filter:drop-shadow(0 1px 3px rgba(120,78,42,.35)) drop-shadow(0 0 10px rgba(255,226,170,.7))}
+
+/* 金のグラデーション見出し */
+.title{font-family:var(--serif);font-weight:700;line-height:1.16;letter-spacing:.1em;
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  /* 文字を金色でくり抜く。色は透明にして背景を文字型に切り抜いている */
+  background:linear-gradient(177deg,
+    #9c6a27 0%, #bd8c3a 14%, #d5a955 30%, #eccb8b 46%,
+    #fbeec9 60%, #f0d69c 74%, #dcb068 88%, #b9862f 100%);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent;
+  /* color が透明なので text-shadow は使えない。drop-shadow で発光させる */
+  filter:
+    drop-shadow(0 1px 1px rgba(108,66,34,.45))
+    drop-shadow(0 2px 8px rgba(108,66,34,.35))
+    drop-shadow(0 0 16px rgba(255,232,178,.85))
+    drop-shadow(0 0 40px rgba(255,214,150,.5))}
+.title .t1{font-size:1.72rem}
+.title .t2{font-size:2.44rem;letter-spacing:.09em}
+
+.subtitle{font-family:var(--serif);font-size:.76rem;letter-spacing:.2em;color:#4b3f78;
+  font-weight:600;margin-top:10px;
+  text-shadow:0 1px 8px rgba(255,255,255,.85),0 0 18px rgba(255,255,255,.7)}
+.tagline{font-family:var(--serif);font-size:.72rem;letter-spacing:.08em;color:#5a4d88;
+  margin-top:5px;text-shadow:0 1px 8px rgba(255,255,255,.85),0 0 16px rgba(255,255,255,.65)}
 
 /* ---------- 壺のステージ ---------- */
 .stage{position:relative;height:310px;display:flex;align-items:flex-end;justify-content:center;
@@ -303,7 +318,9 @@ textarea:focus{border-color:#b39ddb;box-shadow:0 0 0 4px rgba(179,157,219,.18)}
   *{animation-duration:.01ms !important;animation-iteration-count:1 !important}
 }
 @media (max-width:360px){
-  .title{font-size:1.4rem}
+  .title .t1{font-size:1.5rem}
+  .title .t2{font-size:2.1rem}
+  .orn{width:186px}
   .stage{height:266px}
   .pot-wrap{width:236px}
   .pool{width:280px}
