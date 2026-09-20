@@ -71,7 +71,19 @@ body{
 /* ---------- レイアウト ---------- */
 .app{position:relative;z-index:1;width:100%;max-width:430px;padding:18px 16px 40px}
 
-.title-wrap{text-align:center;margin-bottom:10px;position:relative}
+.title-wrap{text-align:center;margin-bottom:10px;position:relative;isolation:isolate}
+/* 文字の裏の白いぼかし。金色を浮き立たせる */
+.title-wrap::before{content:"";position:absolute;z-index:-1;pointer-events:none;
+  left:50%;top:-22%;width:150%;height:150%;transform:translateX(-50%);
+  background:
+    radial-gradient(46% 30% at 50% 38%,
+      rgba(255,255,255,1) 0%, rgba(255,255,255,.92) 30%,
+      rgba(255,254,250,.55) 56%, rgba(255,255,255,0) 82%),
+    radial-gradient(38% 22% at 50% 60%,
+      rgba(255,255,255,.9) 0%, rgba(255,255,255,0) 78%),
+    radial-gradient(64% 44% at 50% 46%,
+      rgba(255,255,255,.5) 0%, rgba(255,252,246,.2) 50%, rgba(255,255,255,0) 84%);
+  filter:blur(14px)}
 
 /* 金の飾り罫 */
 .orn{width:210px;margin:2px auto 6px;line-height:0;
