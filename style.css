@@ -76,14 +76,14 @@ body{
 .title-wrap::before{content:"";position:absolute;z-index:-1;pointer-events:none;
   left:50%;top:-22%;width:150%;height:150%;transform:translateX(-50%);
   background:
-    radial-gradient(46% 30% at 50% 38%,
-      rgba(255,255,255,1) 0%, rgba(255,255,255,.92) 30%,
-      rgba(255,254,250,.55) 56%, rgba(255,255,255,0) 82%),
-    radial-gradient(38% 22% at 50% 60%,
-      rgba(255,255,255,.9) 0%, rgba(255,255,255,0) 78%),
-    radial-gradient(64% 44% at 50% 46%,
-      rgba(255,255,255,.5) 0%, rgba(255,252,246,.2) 50%, rgba(255,255,255,0) 84%);
-  filter:blur(14px)}
+    radial-gradient(48% 32% at 50% 40%,
+      rgba(255,255,255,.62) 0%, rgba(255,255,255,.42) 34%,
+      rgba(255,254,250,.2) 62%, rgba(255,255,255,0) 84%),
+    radial-gradient(40% 24% at 50% 62%,
+      rgba(255,255,255,.34) 0%, rgba(255,255,255,0) 80%),
+    radial-gradient(68% 48% at 50% 46%,
+      rgba(255,255,255,.26) 0%, rgba(255,252,246,.1) 54%, rgba(255,255,255,0) 88%);
+  filter:blur(16px)}
 
 /* 金の飾り罫 */
 .orn{width:210px;margin:2px auto 6px;line-height:0;
@@ -94,16 +94,16 @@ body{
   display:flex;flex-direction:column;align-items:center;gap:2px;
   /* 文字を金色でくり抜く。色は透明にして背景を文字型に切り抜いている */
   background:linear-gradient(177deg,
-    #9c6a27 0%, #bd8c3a 14%, #d5a955 30%, #eccb8b 46%,
-    #fbeec9 60%, #f0d69c 74%, #dcb068 88%, #b9862f 100%);
+    #82551b 0%, #a3702a 13%, #c08d3c 28%, #d9ab5c 44%,
+    #eccd8e 57%, #d2a251 72%, #b07f2c 87%, #8d5e1d 100%);
   -webkit-background-clip:text; background-clip:text;
   -webkit-text-fill-color:transparent; color:transparent;
   /* color が透明なので text-shadow は使えない。drop-shadow で発光させる */
   filter:
-    drop-shadow(0 1px 1px rgba(108,66,34,.45))
-    drop-shadow(0 2px 8px rgba(108,66,34,.35))
-    drop-shadow(0 0 16px rgba(255,232,178,.85))
-    drop-shadow(0 0 40px rgba(255,214,150,.5))}
+    drop-shadow(0 1px 0 rgba(92,56,20,.55))
+    drop-shadow(0 1px 3px rgba(92,56,20,.45))
+    drop-shadow(0 0 14px rgba(255,226,166,.6))
+    drop-shadow(0 0 34px rgba(255,208,140,.35))}
 .title .t1{font-size:1.72rem}
 .title .t2{font-size:2.44rem;letter-spacing:.09em}
 
