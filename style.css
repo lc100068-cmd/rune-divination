@@ -25,15 +25,21 @@ body{
 /* ---------- 背景（2枚目のパステルスカイ） ---------- */
 .sky{position:fixed; inset:0; z-index:0; overflow:hidden;
   background:
-    radial-gradient(58% 26% at 104% -4%, #cfa6f6 0%, rgba(207,166,246,0) 70%),
-    radial-gradient(52% 20% at -6% 19%,  #3fcefc 0%, rgba(63,206,252,0)  72%),
-    radial-gradient(56% 22% at 106% 30%, #ffb3e4 0%, rgba(255,179,228,0) 72%),
+    /* 見出しまわりの星雲のムラ（参照画像は明暗の幅が広い） */
+    radial-gradient(40% 15% at 47% 13%, rgba(255,255,255,.8) 0%, rgba(255,255,255,0) 72%),
+    radial-gradient(34% 16% at 4% 9%,   #6aa8f0 0%, rgba(106,168,240,0) 76%),
+    radial-gradient(30% 14% at 98% 13%, #e6a3e4 0%, rgba(230,163,228,0) 76%),
+    radial-gradient(26% 12% at 14% 24%, #8fd3f5 0%, rgba(143,211,245,0) 78%),
+    radial-gradient(54% 24% at 104% -4%, #cdb0f7 0%, rgba(205,176,247,0) 72%),
+    radial-gradient(48% 20% at -6% 8%,   #a8b6f2 0%, rgba(168,182,242,0) 74%),
+    radial-gradient(52% 20% at -6% 32%,  #7fd8f9 0%, rgba(127,216,249,0) 74%),
+    radial-gradient(56% 22% at 106% 34%, #ffb3e4 0%, rgba(255,179,228,0) 72%),
     radial-gradient(50% 18% at -6% 60%,  #fff2c4 0%, rgba(255,242,196,0) 72%),
     radial-gradient(80% 26% at 50% 106%, #fba4f0 0%, rgba(251,164,240,0) 74%),
     linear-gradient(168deg,
-      #1f7cf2 0%, #3fa5f6 9%, #63c6f8 18%, #8fdcf2 27%,
-      #bde8e8 36%, #e2f0e2 45%, #f8f3df 53%, #fef0d4 62%,
-      #fde0e4 73%, #fccfee 86%, #f9adf2 100%);
+      #7b93e9 0%, #9aabef 7%, #b4bef4 15%, #c4c9f6 22%,
+      #b2d3f2 30%, #98dced 38%, #cbeee8 46%, #f0f1de 53%,
+      #fdf0d4 62%, #fde0e4 73%, #fccfee 86%, #f9adf2 100%);
 }
 .sky::after{ /* 星のきらめき */
   content:""; position:absolute; inset:-10%;
