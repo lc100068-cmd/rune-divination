@@ -107,18 +107,19 @@ body{
 /* 金のグラデーション見出し */
 .title{font-family:var(--serif);font-weight:700;line-height:1.16;letter-spacing:.1em;
   display:flex;flex-direction:column;align-items:center;gap:2px;
-  /* 文字を金色でくり抜く。色は透明にして背景を文字型に切り抜いている */
-  background:linear-gradient(177deg,
-    #bb9350 0%, #9e6e3d 14%, #956739 30%, #aa7c41 45%,
-    #bf8d4d 60%, #d2a24c 75%, #e5bd63 90%, #f2ce76 100%);
-  -webkit-background-clip:text; background-clip:text;
-  -webkit-text-fill-color:transparent; color:transparent;
   /* color が透明なので text-shadow は使えない。drop-shadow で発光させる */
   filter:
     drop-shadow(0 1px 0 rgba(92,56,20,.55))
     drop-shadow(0 1px 3px rgba(92,56,20,.45))
     drop-shadow(0 0 14px rgba(255,226,166,.6))
     drop-shadow(0 0 34px rgba(255,208,140,.35))}
+/* 各行に同じ金のランプをかける。1文字の中で上が濃く下が明るくなる */
+.title .t1,.title .t2{
+  background:linear-gradient(177deg,
+    #d7ab62 0%, #c08a4a 16%, #b98346 32%, #cd9752 46%,
+    #dda85e 60%, #eec06a 74%, #f8d888 88%, #ffeaab 100%);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent}
 .title .t1{font-size:1.72rem}
 .title .t2{font-size:2.44rem;letter-spacing:.09em}
 
